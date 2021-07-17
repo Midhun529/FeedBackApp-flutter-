@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import "./finalpage.dart";
 
 class Question extends StatefulWidget {
   static const router = "/Question";
@@ -16,12 +17,14 @@ class _QuestionState extends State<Question> {
     "5) How was your stay in our hotel?",
     "6) How was our Event Coordination"
   ];
-  var mark = 0;
-  var n = 0;
 
-  nextQuestion() {
+  double mark = 0;
+  var n = 0;
+  double rating = 0;
+
+  nextQuestion(rating) {
     setState(() {
-      mark = mark + 1;
+      mark = mark + rating;
       n = n + 1;
     });
   }
@@ -61,6 +64,32 @@ class _QuestionState extends State<Question> {
             SizedBox(
               height: mediaSize.height * 0.15,
               width: mediaSize.width * 1,
+            ),
+            Slider(
+              value: rating,
+              onChanged: ((double value) => setState(() => rating = value)),
+              divisions: 5,
+              label: "$rating",
+              min: 0,
+              max: 5,
+              activeColor: Colors.red[400],
+              inactiveColor: Colors.black54,
+            ),
+            SizedBox(
+              height: mediaSize.height * 0.15,
+              width: mediaSize.width * 1,
+            ),
+            FloatingActionButton(
+              onPressed: () => setState(() {
+                if (n < 5) {
+                  mark = mark + rating;
+                  n = n + 1;
+                } else {
+                  Navigator.of(context).pushNamed(FinalPage.router);
+                }
+              }),
+              child: Text("Next"),
+              hoverColor: Colors.yellow[100],
             )
           ],
         ));

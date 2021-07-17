@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import "./screens/mcqmainscreen.dart";
 import "./screens/firstQuestion.dart";
+import "./screens/finalpage.dart";
 
 void main() {
   runApp(MyApp());
@@ -31,6 +32,7 @@ class _MyAppState extends State<MyApp> {
       ),
       routes: {
         Question.router: (context) => Question(),
+        FinalPage.router: (context) => FinalPage(),
       },
     );
   }
