@@ -10,12 +10,12 @@ class Question extends StatefulWidget {
 
 class _QuestionState extends State<Question> {
   var question = [
-    "1) How is our decoration",
-    "2) Rate our food  out of 5",
-    "3) How was our workers ,are they frendly",
-    "4) Rate our Wedding photography",
-    "5) How was your stay in our hotel?",
-    "6) How was our Event Coordination"
+    "1) How did you like our service?",
+    "2) How did you apperciate the sanitiation?",
+    "3) How was the sound quality?",
+    "4) How was the lighting",
+    "5) How likely are you to reccomend us to your frirnds?",
+    "6) How likely are you to come back here?"
   ];
 
   double mark = 0;
@@ -85,7 +85,9 @@ class _QuestionState extends State<Question> {
                   mark = mark + rating;
                   n = n + 1;
                 } else {
-                  Navigator.of(context).pushNamed(FinalPage.router);
+                  mark = mark + rating;
+                  Navigator.of(context)
+                      .pushNamed(FinalPage.router, arguments: mark);
                 }
               }),
               child: Text("Next"),

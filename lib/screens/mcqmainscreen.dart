@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './firstQuestion.dart';
 
 class McqMainScreen extends StatelessWidget {
+  static final route = "/";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
