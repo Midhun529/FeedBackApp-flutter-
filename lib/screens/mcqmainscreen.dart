@@ -10,7 +10,7 @@ class McqMainScreen extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.yellow[300],
           elevation: 10,
-          title: Text("MCQ"),
+          title: Text("QSTP"),
         ),
         body: InkWell(
           child: Container(
@@ -28,9 +28,9 @@ class McqMainScreen extends StatelessWidget {
                   size: 100,
                 ),
                 Text(
-                  "Lets Start The Quiz!",
+                  " Enter your Feedback",
                   style: TextStyle(
-                    fontSize: 25,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),

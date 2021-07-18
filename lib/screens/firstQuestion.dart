@@ -36,7 +36,7 @@ class _QuestionState extends State<Question> {
         backgroundColor: Colors.yellow[200],
         appBar: AppBar(
           title: Text(
-            "MCQ",
+            "QSTP",
             style: TextStyle(color: Colors.white),
           ),
         ),
